@@ -26,8 +26,6 @@ AlexNet is a famous CNN architecture which has been developed by [8]. It consist
 2)	DenseNet121 Convultional Neural Network (our proposed method)
 DenseNet is another convolutional neural network architecture which has been developed by [9]. DenseNet is a great architecture to increase the depth of the neural network. DenseNet allows a dense block to concatenate feature maps from every earlier layer and link each layer to every other. By utilizing this mechanism, the network’s learning ability significantly amplified, and the gradient flow is improved in training phase. There is different version of DenseNet namely DenseNet-121, DenseNet-169, DenseNet-201 etc. Due to limited computational power only DenseNet-121 was used. Another technique which has been used with our proposed method is transfer learning. Transfer learning is a technique, which means a model like DenseNet121 is reused for skin lesion classification task which it has been trained previously with a similar task. Due to insufficient number of images in the available datasets and the massive resources required for deep learning algorithms, these datasets are not suitable to train a deep neural network from the beginning. Therefore, Transfer learning overcame this issue for us.
 
-<img width="229" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/addbaf7b-069b-428a-9d6b-5122fc6d4474">
-
 
 4)	ResNet18 Convolutional Neural Network 
 ResNet18 is a deep learning model in which each layer compares its results to the weighted results of the previous
