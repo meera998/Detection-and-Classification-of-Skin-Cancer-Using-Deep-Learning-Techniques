@@ -35,7 +35,7 @@ layers while preserving the original outputs, enabling more precise predictions 
 identity of the input x is passed and added to the output of
 another weighted layer F(X) + x:
 
-<img width="165" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/2c8d5df9-098c-4644-a15d-c95755013e68">
+<img width="300" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/2c8d5df9-098c-4644-a15d-c95755013e68">
 
 
 This ensures that the vanishing gradient problem is prevented while improving the performance of the model. There are different types of ResNet networks, which are determined by the number of layers used, such as ResNet 18, 34, 101, 152, and 1202. For this project, ResNet18 is considered as the optimal model to classify the ISIC images. As shown in Figure 4, the model consists of 18 layers, and each layer has residual blocks that contain a convolutional layer, batch normalization, ReLU, and a fully connected layer that performs the classification of the classes. 
