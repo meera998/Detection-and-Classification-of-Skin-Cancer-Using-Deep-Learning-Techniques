@@ -68,13 +68,12 @@ A. Discussion
 Overall, all models achieved a high accuracy score. However, as stated in Section IV, additional metrics are necessary to assess and comprehend the behavior of each model. To further analyze the models, accuracy, precision, recall, and F1 score are computed on the test data for each model. As depicted in Table 1, DenseNet-121 exhibited slightly better performance and obtained higher scores in terms of prediction accuracy.
 
  
-Models			
-
-	Accuracy	Precision	Recall	Sensitivity	Specificity
-AlexNet	88.53%	87%	89%	96%	27%
-ResNet	93.56%	93%	94%	99%	49%
-DenseNet	93.46%	94%	93%	96%	72%
-Kassem et al.	94.92%	80.36	--------	79.8%	97%
+| Model        | Accuracy | Precision | Recall | Sensitivity | Specificity |
+|--------------|----------|-----------|--------|-------------|-------------|
+| AlexNet      | 88.53%   | 87%       | 89%    | 96%         | 27%         |
+| ResNet       | 93.56%   | 93%       | 94%    | 99%         | 49%         |
+| DenseNet     | 93.46%   | 94%       | 93%    | 96%         | 72%         |
+| Kassem et al.| 94.92%   | 80.36     | --------| 79.8%      | 97%         |
 
 
 Looking at Table 1, the method proposed by Kassem et el. Scored highest accuracy While our proposed method recorded highest precision. Overall, DenseNet-121 have performed better than ResNet-18 and AlexNet as shown in Figure 7. 
