@@ -24,10 +24,12 @@ In this paper three convolutional neural network architectures have been utilize
 AlexNet is a famous CNN architecture which has been developed by [8]. It consists of eight layers, five convolutional layers and three fully connected layers. Because of its deep architecture, it can learn complex features from the dermatoscopic images which make it one of the most efficient architectures for our task. AlexNet can yield 4096-dimensional feature vector for each image, which contains the activations of the hidden layer immediately prior the output layer. AlexNet uses ReLU activation function which is defined as f(x) = max (0, x). The function returns zero for negative input and return the input itself when it is positive. This activation function introduces non-linearity to the model so it can learn complex pattern from the input images. Another crucial component in AlexNet architecture is Batch Normalization. This component is applied after every activation function, and it helps stabilize and speed up the training process. 
 
 2)	DenseNet121 Convultional Neural Network (our proposed method)
-DenseNet is another convolutional neural network architecture which has been developed by [9]. DenseNet is a great architecture to increase the depth of the neural network. DenseNet allows a dense block to concatenate feature maps from every earlier layer and link each layer to every other. By utilizing this mechanism, the network’s learning ability significantly amplified, and the gradient flow is improved in training phase. There is different version of DenseNet namely DenseNet-121, DenseNet-169, DenseNet-201 etc. Due to limited computational power only DenseNet-121 was used. Another technique which has been used with our proposed method is transfer learning. Transfer learning is a technique, which means a model like DenseNet121 is reused for skin lesion classification task which it has been trained previously with a similar task. Due to insufficient number of images in the available datasets and the massive resources required for deep learning algorithms, these datasets are not suitable to train a deep neural network from the beginning. Therefore, Transfer learning overcame this issue for us. 
+DenseNet is another convolutional neural network architecture which has been developed by [9]. DenseNet is a great architecture to increase the depth of the neural network. DenseNet allows a dense block to concatenate feature maps from every earlier layer and link each layer to every other. By utilizing this mechanism, the network’s learning ability significantly amplified, and the gradient flow is improved in training phase. There is different version of DenseNet namely DenseNet-121, DenseNet-169, DenseNet-201 etc. Due to limited computational power only DenseNet-121 was used. Another technique which has been used with our proposed method is transfer learning. Transfer learning is a technique, which means a model like DenseNet121 is reused for skin lesion classification task which it has been trained previously with a similar task. Due to insufficient number of images in the available datasets and the massive resources required for deep learning algorithms, these datasets are not suitable to train a deep neural network from the beginning. Therefore, Transfer learning overcame this issue for us.
+
+<img width="229" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/addbaf7b-069b-428a-9d6b-5122fc6d4474">
 
 
-3)	ResNet18 Convolutional Neural Network 
+4)	ResNet18 Convolutional Neural Network 
 ResNet18 is a deep learning model in which each layer compares its results to the weighted results of the previous
 layers through residual functions. This helps the model to
 pass information more easily (skip connection) between the
@@ -35,7 +37,13 @@ layers while preserving the original outputs, enabling more precise predictions 
 identity of the input x is passed and added to the output of
 another weighted layer F(X) + x:
 
+<img width="165" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/2c8d5df9-098c-4644-a15d-c95755013e68">
+
+
 This ensures that the vanishing gradient problem is prevented while improving the performance of the model. There are different types of ResNet networks, which are determined by the number of layers used, such as ResNet 18, 34, 101, 152, and 1202. For this project, ResNet18 is considered as the optimal model to classify the ISIC images. As shown in Figure 4, the model consists of 18 layers, and each layer has residual blocks that contain a convolutional layer, batch normalization, ReLU, and a fully connected layer that performs the classification of the classes. 
+
+<img width="183" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/15e81f78-ee59-4210-9a7a-9e19390aea74">
+
 
 
 IISIC-2019 is imported via PIL (Python Imaging Library) and combined. As mentioned in section II, the data has been divided into train/test/validation. Then, As shown in figure 3, some preprocessing and data augmentation was applied to the images namely resizing the images to dimensions of 224 by 224, RandomHorizontalFlip, RandomRotation etc. Once the sets are split, the data is loaded, and batches are prepared using a shuffled batch size of 32, resulting in 1278 train, 274 test, and 275 validation batches for the AlexNet, ResNet18 and our proposed model (pre-trained DenseNet121). After creating the batches, the train and test step functions are developed. The train step function trains the model with each batch of images provided. First, the train step function makes a prediction with an image, calculates the loss and accuracy. Then, backpropagation is performed to compute the gradients based on the loss function. The gradients are computed using the chain rule to determine the magnitude and direction of adjustment in the model parameters. Once the gradients are calculated, optimization is performed to update the model parameters based on the computed gradients. The train step function also computes the loss and accuracy ratio to track the model's performance. This process is repeated for all the batches in the train, test, and validation sets.
@@ -64,11 +72,16 @@ F-Score is a harmonic mean of the precision and recall.
 ## V.	RESULTS AND DISCUSSION
 All models achieved high accuracy and low loss ratio with a good performance, however, our proposed model which is DenseNet-121, outperformed ALexNet and ResNet-18. Figure 5 below demonstrates the result of our proposed method (pre-trained DenseNet-121), which was trained for 50 epochs. The loss ratio decreased for both the train and validation datasets. Additionally, the model's accuracy showed a remarkable increase.
 
+<img width="277" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/9bc5750d-2d0d-4afc-9ebb-2be9e5329f16">
+
 
 On the contrary, the loss function of DenseNet-121 exhibited a significant decrease for the train set but only a slight decrease for the validation set. As depicted in Figure 5, the accuracy ratio experienced a substantial increase for the train set, whereas it showed a slight improvement for the validation data. Figures 6 depicts the confusion matrix computed on the test data, which comprises 3,776 records. In Figure 6, the DenseNet model accurately predicted 281benign images and made 111 incorrect predictions. Additionally, it correctly identified 3,248 malignant cases but had 136 false predictions.
 
 A. Discussion
 Overall, all models achieved a high accuracy score. However, as stated in Section IV, additional metrics are necessary to assess and comprehend the behavior of each model. To further analyze the models, accuracy, precision, recall, and F1 score are computed on the test data for each model. As depicted in Table 1, DenseNet-121 exhibited slightly better performance and obtained higher scores in terms of prediction accuracy.
+
+<img width="207" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/7b5ff134-9bb5-4021-9006-2065f4a4f5dc">
+
 
  
 | Model        | Accuracy | Precision | Recall | Sensitivity | Specificity |
@@ -80,7 +93,9 @@ Overall, all models achieved a high accuracy score. However, as stated in Sectio
 
 
 Looking at Table 1, the method proposed by Kassem et el. Scored highest accuracy While our proposed method recorded highest precision. Overall, DenseNet-121 have performed better than ResNet-18 and AlexNet as shown in Figure 7. 
- 
+
+ <img width="191" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/133d9bf5-1291-43fd-aa23-14739790882b">
+
 
 B. Research Limitations
 All experiments were carried out using Mac book air which has limited computing resources. Due to these constraints, it was not possible to conduct the research with a complete hyperparameter tuning process and test more complex and deep models. Instead, a trial-and-error approach was employed, testing random parameters on the model using the validation set until an optimal configuration was identified. However, there is potential for further enhancing the model's performance by exploring a wider range of hyperparameters.
