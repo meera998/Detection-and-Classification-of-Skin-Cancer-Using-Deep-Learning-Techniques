@@ -70,7 +70,7 @@ F-Score is a harmonic mean of the precision and recall.
 ## V.	RESULTS AND DISCUSSION
 All models achieved high accuracy and low loss ratio with a good performance, however, our proposed model which is DenseNet-121, outperformed ALexNet and ResNet-18. Figure 5 below demonstrates the result of our proposed method (pre-trained DenseNet-121), which was trained for 50 epochs. The loss ratio decreased for both the train and validation datasets. Additionally, the model's accuracy showed a remarkable increase.
 
-<img width="277" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/9bc5750d-2d0d-4afc-9ebb-2be9e5329f16">
+<img width="300" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/9bc5750d-2d0d-4afc-9ebb-2be9e5329f16">
 
 
 On the contrary, the loss function of DenseNet-121 exhibited a significant decrease for the train set but only a slight decrease for the validation set. As depicted in Figure 5, the accuracy ratio experienced a substantial increase for the train set, whereas it showed a slight improvement for the validation data. Figures 6 depicts the confusion matrix computed on the test data, which comprises 3,776 records. In Figure 6, the DenseNet model accurately predicted 281benign images and made 111 incorrect predictions. Additionally, it correctly identified 3,248 malignant cases but had 136 false predictions.
@@ -92,7 +92,7 @@ Overall, all models achieved a high accuracy score. However, as stated in Sectio
 
 Looking at Table 1, the method proposed by Kassem et el. Scored highest accuracy While our proposed method recorded highest precision. Overall, DenseNet-121 have performed better than ResNet-18 and AlexNet as shown in Figure 7. 
 
- <img width="191" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/133d9bf5-1291-43fd-aa23-14739790882b">
+ <img width="300" alt="image" src="https://github.com/meera998/Detection-and-Classification-of-Skin-Cancer-Using-Deep-Learning-Techniques/assets/109981582/133d9bf5-1291-43fd-aa23-14739790882b">
 
 
 B. Research Limitations
